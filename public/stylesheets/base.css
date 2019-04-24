@@ -14,7 +14,7 @@ html, body {
 
 .hero-container {
   position: relative;
-  height: calc(100vh - 13vh);
+  min-height: calc(100vh - 13vh);
   background: url('/images/raftingbackground.jpg');
   background-position: 50%;
   background-repeat: no-repeat;
@@ -32,13 +32,18 @@ html, body {
   bottom: 0;
   right: 0;
   left: 0;
-  background: rgba(0,0,0,0.3);
-}
-
-.hero-heading {
-  /* font-size: 3.5rem; */
+  background: rgba(0,0,0,0.5);
 }
 
 .btn-rounded {
   border-radius: 1.425rem !important;
+}
+
+input.select-dropdown {
+  color: white !important;
+  font-weight: 300;
+}
+
+.index-tab:not(.active) {
+  display: none;
 }
