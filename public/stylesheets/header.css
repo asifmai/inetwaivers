@@ -1,0 +1,6 @@
+.navbar {
+  /* background: white !important; */
+  box-shadow: 0px 0px 4px 4px white;
+  z-index: 1;
+  padding: 0;
+}

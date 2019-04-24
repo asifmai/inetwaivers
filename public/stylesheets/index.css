@@ -1,0 +1,27 @@
+
+.index-tab:not(.active) {
+  display: none;
+}
+
+.hero-container {
+  position: relative;
+  min-height: calc(100vh - 13vh);
+  background: url('/images/raftingbackground.jpg');
+  background-position: 50%;
+  background-repeat: no-repeat;
+  /* background-attachment: fixed; */
+  background-size: cover;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0,0,0,0.5);
+}
