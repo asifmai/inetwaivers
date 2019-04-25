@@ -14,16 +14,18 @@
       <div class="container intro-tab index-tab active">
         <div class="row">
           <div class="col">
-            <h1 class="text-center hero-heading h1 h1-responsive">Welcome to iNETWaivers.com</h1>
+            <h1 class="text-center hero-heading h1 h1-responsive underlined-heading">Welcome to iNETWaivers.com</h1>
             <p class="lead text-center">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam, earum.</p>
           </div>
         </div>
         <div class="row mt-2 animated fadeIn slow">
           <div class="col text-center">
             <div class="" data-wow-delay="0.4s">
-              <a class="btn btn-primary btn-rounded waves-effect waves-light btn-newguest"><i class="fas fa-user-plus left"></i> New
+              <a class="btn btn-primary btn-rounded waves-effect waves-light btn-newguest"><i
+                  class="fas fa-user-plus left"></i> New
                 Guest</a>
-              <a class="btn btn-outline-white btn-rounded waves-effect waves-light btn-regularguest"><i class="fas fa-user left"></i>
+              <a class="btn btn-outline-white btn-rounded waves-effect waves-light btn-regularguest"><i
+                  class="fas fa-user left"></i>
                 Regular Guest</a>
             </div>
           </div>
@@ -31,33 +33,36 @@
       </div>
       <div class="container regularguest-tab index-tab">
         <div class="row">
-          <div class="col-md-4 mx-auto">
-            <h2 class="h2 h2-responsive text-center">Regular Guest</h2>
-            <div class="md-form">
-              <input type="email" id="materialLoginFormEmail" class="form-control text-white">
-              <label for="materialLoginFormEmail" class="text-white">E-mail</label>
-            </div>
-            <button class="btn btn-primary btn-rounded btn-block my-4 waves-effect" type="submit">Continue</button>
-            <p class="text-center">Not a Rugular Guest?
-              <a href="" class="btn-newguest">Register</a>
-            </p>
+          <div class="col-md-5 mx-auto">
+            <h2 class="h2 h2-responsive text-center underlined-heading">Regular Guest</h2>
+            <form action="/choosewaiver" method="POST" data-parsley-validate>
+              <div class="md-form">
+                <input type="email" id="materialLoginFormEmail" class="form-control text-white" data-parsley-required name="email">
+                <label for="materialLoginFormEmail" class="text-white">E-mail</label>
+              </div>
+              <button class="btn btn-primary btn-rounded btn-block my-4 waves-effect" type="submit">Continue</button>
+              <p class="text-center">Not a Rugular Guest?
+                <a href="" class="btn-newguest">Register</a>
+              </p>
+            </form>
           </div>
         </div>
       </div>
       <div class="container newguest-tab my-4 index-tab">
         <div class="row">
           <div class="col-md-5 mx-auto">
-            <h2 class="h2 h2-responsive text-center">New Guest</h2>
+            <h2 class="h2 h2-responsive text-center underlined-heading">New Guest</h2>
+            <form action="/choosewaiver" method="POST" data-parsley-validate>
             <div class="row">
               <div class="col">
                 <div class="md-form">
-                  <input type="text" id="regfn" class="form-control text-white">
+                  <input type="text" id="regfn" class="form-control text-white" name="firstname" data-parsley-required>
                   <label for="regfn" class="text-white">First Name</label>
                 </div>
               </div>
               <div class="col">
                 <div class="md-form">
-                  <input type="text" id="regln" class="form-control text-white">
+                  <input type="text" id="regln" class="form-control text-white" name="lastname" data-parsley-required>
                   <label for="regln" class="text-white">Last Name</label>
                 </div>
               </div>
@@ -65,14 +70,14 @@
             <div class="row">
               <div class="col">
                 <div class="md-form mt-0">
-                  <input type="text" id="regsa" class="form-control text-white">
+                  <input type="text" id="regsa" class="form-control text-white" data-parsley-required name="address">
                   <label for="regsa" class="text-white">Street Address</label>
                 </div>
               </div>
             </div>
             <div class="row">
               <div class="col">
-                <select class="mdb-select md-form text-white mt-0">
+                <select class="mdb-select md-form text-white mt-0" name="city" data-parsley-required>
                   <option value="" disabled selected>City</option>
                   <option value="1">City 1</option>
                   <option value="2">City 2</option>
@@ -80,7 +85,7 @@
                 </select>
               </div>
               <div class="col">
-                <select class="mdb-select md-form text-white mt-0">
+                <select class="mdb-select md-form text-white mt-0" name="state" data-parsley-required>
                   <option value="" disabled selected>State</option>
                   <option value="1">State 1</option>
                   <option value="2">State 2</option>
@@ -91,7 +96,7 @@
             <div class="row">
               <div class="col">
                 <div class="md-form mt-0">
-                  <input type="text" id="regzc" class="form-control text-white">
+                  <input type="number" id="regzc" class="form-control text-white" name="zipcode" data-parsley-required>
                   <label for="regzc" class="text-white">Zip Code</label>
                 </div>
               </div>
@@ -99,7 +104,7 @@
             <div class="row">
               <div class="col">
                 <div class="md-form mt-0">
-                  <input type="email" id="regemail" class="form-control text-white">
+                  <input type="email" id="regemail" class="form-control text-white" name="email" data-parsley-required>
                   <label for="regemail" class="text-white">Email</label>
                 </div>
               </div>
@@ -107,7 +112,7 @@
             <div class="row">
               <div class="col">
                 <div class="md-form mt-0">
-                  <input type="text" id="regephone" class="form-control text-white">
+                  <input type="text" id="regephone" class="form-control text-white" name="phone" data-parsley-required>
                   <label for="regephone" class="text-white">Phone</label>
                 </div>
               </div>
@@ -116,6 +121,7 @@
             <p class="text-center">Rugular Guest?
               <a href="" class="btn-regularguest">Click Here</a>
             </p>
+          </form>
           </div>
         </div>
       </div>

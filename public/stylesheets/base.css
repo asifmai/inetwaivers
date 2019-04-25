@@ -3,6 +3,7 @@
 html, body {
   height: 100%;
   font-family: Poppins;
+  background: #EEEEEE;
 }
 
 .btn-rounded {
@@ -12,4 +13,22 @@ html, body {
 input.select-dropdown {
   color: white !important;
   font-weight: 300;
+}
+
+.underlined-heading:after {
+  content: '';
+  display: block;
+  margin: auto;
+  height: 2px;
+  width: 10vw;
+  background: #FF3547;
+  margin-top: 0.5em;
+}
+
+.parsley-errors-list.filled{
+  list-style: none;
+  padding-left: 0.5em;
+  font-size: 0.8em;
+  margin-bottom: 0;
+  color: #FF3547;
 }
