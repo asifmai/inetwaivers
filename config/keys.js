@@ -1,3 +1,3 @@
 module.exports = {
-  mongoURI: 'mongodb://localhost/newapp',
+  mongoURI: 'mongodb+srv://iqbal:temporarypass@inetwaivers-zk9gi.mongodb.net/test?retryWrites=true',
 };

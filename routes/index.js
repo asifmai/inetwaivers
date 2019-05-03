@@ -2,11 +2,15 @@ var express = require('express');
 var router = express.Router();
 
 const indexController = require('../controllers/indexcontroller');
+const auth = require('../config/auth')
 
 /* GET home page. */
 router.get('/', indexController.index_get);
 
-/* GET home page. */
-router.post('/choosewaiver', indexController.choosewaiver_post);
+/* GET Choose Waiver. */
+router.get('/choosewaiver', auth.ensureAuthenticated, indexController.choosewaiver_get);
+
+/* GET Waiver Page. */
+router.get('/waiver/:waiverid', auth.ensureAuthenticated, indexController.waiver_get);
 
 module.exports = router;

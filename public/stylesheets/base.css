@@ -32,3 +32,17 @@ input.select-dropdown {
   margin-bottom: 0;
   color: #FF3547;
 }
+
+.alert {
+  margin: 0;
+  padding: 0.1em;
+  font-size: 0.8em;
+  font-weight: bold;
+  background: transparent;
+  text-align: center;
+}
+
+.alert .close {
+  font-size: 1.5em;
+    padding: 0.1em;
+}

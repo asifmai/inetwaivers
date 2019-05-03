@@ -23,12 +23,17 @@
         </div>
       </li> -->
       <!-- </ul> -->
-      <% if (typeof page != 'undefined' && page == '/') {%>
+      <% if (typeof page != 'undefined') {%>
       <div class="my-2 my-lg-0 ml-auto">
         <button type="button" class="btn btn-outline-primary btn-rounded btn-sm btn-newguest"><i
             class="fas fa-user-plus left"></i> New</button>
         <button type="button" class="btn btn-outline-success btn-rounded btn-sm btn-regularguest"><i
             class="fas fa-user left"></i> Regular</button>
+      </div>
+      <% } else { %>
+      <div class="my-2 my-lg-0 ml-auto">
+          <a href="/users/logout" class="btn btn-outline-primary btn-rounded btn-sm"><i
+              class="fas fa-user-alt-slash"></i> Log Out</a>
       </div>
       <% } %>
     </div>

@@ -1,0 +1,113 @@
+<div class="container newguest-tab my-4 index-tab
+<% if (page == 'registerpage') { %>
+  active
+<% } %>
+">
+  <div class="row">
+    <div class="col-md-5 mx-auto">
+      <h2 class="h2 h2-responsive text-center underlined-heading">New Guest</h2>
+      <form action="/users/register" method="POST" data-parsley-validate>
+      <div class="row">
+        <div class="col">
+          <div class="md-form">
+            <input type="text" id="regfn" class="form-control text-white" name="firstname" data-parsley-required
+            <% if (typeof registerUser != 'undefined') {%>
+              value="<%= registerUser.firstname %>"
+            <% } %>
+            >
+            <label for="regfn" class="text-white">First Name</label>
+          </div>
+        </div>
+        <div class="col">
+          <div class="md-form">
+            <input type="text" id="regln" class="form-control text-white" name="lastname" data-parsley-required
+            <% if (typeof registerUser != 'undefined') {%>
+              value="<%= registerUser.lastname %>"
+            <% } %>
+            >
+            <label for="regln" class="text-white">Last Name</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="md-form mt-0">
+            <input type="text" id="regsa" class="form-control text-white" data-parsley-required name="address"
+            <% if (typeof registerUser != 'undefined') {%>
+              value="<%= registerUser.address %>"
+            <% } %>
+            >
+            <label for="regsa" class="text-white">Street Address</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <select class="mdb-select md-form text-white mt-0" name="city" data-parsley-required>
+            <option value="" disabled selected>City</option>
+            <option value="1">City 1</option>
+            <option value="2">City 2</option>
+            <option value="3">City 3</option>
+          </select>
+        </div>
+        <div class="col">
+          <select class="mdb-select md-form text-white mt-0" name="state" data-parsley-required>
+            <option value="" disabled selected>State</option>
+            <option value="1">State 1</option>
+            <option value="2">State 2</option>
+            <option value="3">State 3</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="md-form mt-0">
+            <input type="number" id="regzc" class="form-control text-white" name="zipcode" data-parsley-required
+            <% if (typeof registerUser != 'undefined') {%>
+              value="<%= registerUser.zipcode %>"
+            <% } %>
+            >
+            <label for="regzc" class="text-white">Zip Code</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="md-form mt-0">
+            <input type="email" id="regemail" class="form-control text-white" name="email" data-parsley-required
+            <% if (typeof registerUser != 'undefined') {%>
+              value="<%= registerUser.email %>"
+            <% } %>
+            >
+            <label for="regemail" class="text-white">Email</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="md-form mt-0">
+            <input type="text" id="regphone" class="form-control text-white" name="phone" data-parsley-required
+            <% if (typeof registerUser != 'undefined') {%>
+              value="<%= registerUser.phone %>"
+            <% } %>
+            >
+            <label for="regphone" class="text-white">Phone</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="md-form mt-0">
+            <input type="password" id="regpassword" class="form-control text-white" name="password" data-parsley-required data-parsley-minlength="6">
+            <label for="regpassword" class="text-white">Password</label>
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-primary btn-rounded btn-block my-4 waves-effect" type="submit">Continue</button>
+      <p class="text-center">Rugular Guest?
+        <a href="" class="btn-regularguest">Click Here</a>
+      </p>
+    </form>
+    </div>
+  </div>
+</div>

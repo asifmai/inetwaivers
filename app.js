@@ -1,48 +1,65 @@
+// Variables
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const mongoose = require('mongoose');
+const passport = require('passport');
+const LocalStrategy = require('passport-local');
 const session = require('express-session');
 const favicon = require('serve-favicon');
 const flash = require('connect-flash');
+const expressSanitizer = require('express-sanitizer');
 
+// Import User Model
+const User = require('./models/User');
+
+// Initialize App
+var app = express();
+
+// Routers Config
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
-var app = express();
-
 // DB Config
-// const db = require('./config/keys.js').mongoURI;
+const db = require('./config/keys.js').mongoURI;
 
-// mongoose.connect(db, { useNewUrlParser: true })
-  // .then(() => console.log('MongoDB Connected...'))
-  // .catch(err => console.log('MongoDB Connect Error:', err));
+mongoose.connect(db, { useNewUrlParser: true })
+  .then(() => console.log('MongoDB Connected...'))
+  .catch(err => console.log('MongoDB Connect Error:', err));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+// Middlewares
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(expressSanitizer());
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.png')));
 app.use(session({ secret: 'harisiqbal', resave: false, saveUninitialized: false }));
 app.use(flash());
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(User.createStrategy());
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
 
 // Global variables
 app.use((req, res, next) => {
   res.locals.success_msg = req.flash('success_msg');
   res.locals.error_msg = req.flash('error_msg');
-  // res.locals.error = req.flash('error');
-  // res.locals.user = req.user;
-  res.locals.guestemail = '';
+  res.locals.error = req.flash('error');
+  res.locals.user = req.user;
   next();
 });
 
+// Routers Config
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
