@@ -1,0 +1,25 @@
+.waiver-container {
+  background: #fff;
+  padding: 1.5em;
+  /* text-align: justify; */
+}
+
+.kbw-signature {
+  width: 300px;
+  height: 150px;
+  border: 1px solid #a0a0a0;
+}
+
+.username {
+  /* text-decoration: underline; */
+  padding: 0 50px 0 10px;
+  border-bottom: 1px solid #a0a0a0;
+}
+
+.username.empty {
+  padding: 0 100px 0 100px;
+}
+
+.para {
+  text-align: justify;
+}
