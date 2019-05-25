@@ -18,42 +18,20 @@
       </div>
 
       <div class="row my-4">
-        <div class="col-md-4 col-sm-6 mb-4">
-          <a href="/waiver/0">
+        <% for (var i = 0; i < waivers.length; i++) { %>
+        <div class="col-md-4 col-sm-6 mb-4 mx-auto">
+          <a href="/waiver/<%= waivers[i]._id %>">
             <div class="card card-cascade narrower">
               <div class="view view-cascade gradient-card-header info-color">
-                <h4 class="mb-0 font-weight-500">Waiver 1</h4>
+                <h4 class="mb-0 font-weight-500"><%= waivers[i].name %></h4>
               </div>
               <div class="card-body text-center px-4 mb-3">
-                  <p class="card-text pb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus ex, non quos laudantium veritatis sequi.Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.</p>
+                  <p class="card-text pb-2"><%= waivers[i].description %></p>
               </div>
             </div>
           </a>
         </div>
-        <div class="col-md-4 col-sm-6 mb-4">
-          <a href="/waiver/1">
-            <div class="card card-cascade narrower">
-              <div class="view view-cascade gradient-card-header info-color">
-                <h4 class="mb-0 font-weight-500">Waiver 2</h4>
-              </div>
-              <div class="card-body text-center px-4 mb-3">
-                  <p class="card-text pb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus ex, non quos laudantium veritatis sequi.Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.</p>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="col-md-4 col-sm-6 mb-4">
-          <a href="/waiver/2">
-            <div class="card card-cascade narrower">
-              <div class="view view-cascade gradient-card-header info-color">
-                <h4 class="mb-0 font-weight-500">Waiver 3</h4>
-              </div>
-              <div class="card-body text-center px-4 mb-3">
-                  <p class="card-text pb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus ex, non quos laudantium veritatis sequi.Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.</p>
-              </div>
-            </div>
-          </a>
-        </div>
+        <% } %>
       </div>
     </div>
   </section>

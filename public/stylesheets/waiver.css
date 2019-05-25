@@ -20,6 +20,8 @@
   padding: 0 100px 0 100px;
 }
 
-.para {
-  text-align: justify;
+.waiver-input {
+  border: none;
+  border-bottom: 1px solid #a0a0a0;
+  padding: 0 10px 0 10px;
 }

@@ -9,135 +9,107 @@
 
 <body>
   <% include partials/header %>
-  <section id="choosewaiversection">
-    <div class="container">
-      <div class="row">
-        <div class="col text-center mb-4">
-          <h2 class="h2-responsive underlined-heading h2 mt-3">Waiver 1</h2>
-        </div>
-      </div>
+  <% include partials/messages %>
 
-      <div class="waiver-container">
-        <h4 class="h4 text-center">PARTICIPANT WAIVER, RELEASE OF LIABILITY, ASSUMPTION OF RISK, AND INDEMNIFICATION </h4>
-        <p class="para">In consideration of Carolina Outfitters, Inc. furnishing services and/or equipment to participate
-          in the activities or events I understand, acknowledge and agree that:</p>
-        <p class="para"><b>1.) THERE ARE SIGNIFICANT INHERENT RISKS, DANGERS, AND HAZARDS COMMONLY ASSOCIATED WITH MY
-            PARTICIPATION IN WHITEWATER RAFTING ACTIVITIES</b>, both known and unknown, including, but not limited to
-          drowning, hypothermia, fractures, partial or complete paralysis, injuries from being thrown from the boat, being
-          struck by branches or overhanging tree limbs, river obstructions, foot entrapment in rocks in the river bed,
-          paddle blows, bee stings, or animal bites, and disease, any of which could cause serious disability or death.
-          The risks and dangers may be caused by the negligence of the owners, guides, employees, officers or agents of
-          Carolina Outfitters, Inc, the United States of America, or the U.S. Forest Service; the negligence of the
-          participants, negligence of others, accidents, forces of nature, or other causes. The risks and dangers may
-          arise from guide or personnel decision-making, including, but not limited to that a guide or other personnel may
-          misjudge terrain, weather, river conditions, water levels, and river navigation routes, as well as other risks,
-          hazards, and dangers, both known and unknown, that are inherent to the recreational activities.</p>
-        <p class="para"><b>2.) I KNOWINGLY AND FREELY ASSUME ALL SUCH RISKS AND DANGERS, AND HAZARDS, both known and
-            unknown, AND ALL RESPONSIBILITY FOR ANY LOSSES AND/OR DAMAGES EVEN IF THEY ARE CAUSED IN WHOLE OR IN PART FROM
-            THE NEGLIGENCE OF CAROLINA OUTFITTERS, THE UNITED STATES OF AMERICA, THE UNITED STATES FOREST SERVICE and/or
-            by any other person, and I ASSUME FULL RESPONSIBILITY FOR MY PARTICIPATION. </b></p>
-        <p class="para">3.) I willingly agree to comply with terms and conditions for participation. I certify that any
-          child participating weighs at least 60 pounds, or is at least 7 years of age; I am not, and will not be under
-          the influence of drugs or alcohol on the premises or during my participation; I will wear my life jacket
-          properly fastened, and closely fitted at all times on or near the river, I will inspect all rafting equipment
-          and I will use only equipment in good condition during and for this expedition, and if I observe any significant
-          hazard during my participation, I will remove myself from participation, and report it to the mangers as quickly
-          as possible. I will accept full financial responsibility for any damage to, or loss of rafting equipment while
-          it is in my possession or control. I understand that whitewater rafting is a very strenuous physical, emotional,
-          and mental activity and that I am in adequate physical and mental condition and that I have no limitations to my
-          participation in the sport. I agree that I will be traveling on my own on the river without the support or
-          supervision of Carolina Outfitters, and agree that this endeavor is not a joint venture but that it is and shall
-          be considered an individual participation in the sport, and that there are no lifeguards on the river. I grant
-          Carolina Outfitters, Inc. permission to use my photographs.</p>
-        <p class="para">4.) I agree that I will be obligated and responsible for a $100,000.00 penalty fee which I, agree
-          to be assessed automatically against me in the event that I or my respective heirs, assigns, personal agents or
-          beneficiaries institute or attempt to seek legal recourse against any party, person, or entity unto which this
-          document is given. I agree that the venue for any dispute that may arise out of this agreement to which Carolina
-          Outfitters, Inc. or its agents is a party shall be in Bryson City, N.C. </p>
-        <p class="para">5.) I agree that each item of the contract stands independently, and that if one item should be
-          ruled against by a member of a legal court, all the others items will remain effective. </p>
-        <p class="para">6.) I, for myself and on behalf of my heirs, assigns, personal representatives, and next of kin,
-          <b>HEREBY RELEASE, WAIVE, DISCHARGE, HOLD HARMLESS, DEFEND AND INDEMNIFY THE UNITED STATES OF AMERICA, THE
-            UNITED STATES FOREST SERVICE, AND CAROLINA OUTFITTERS, INC.</b>., its owners, agents, officers, and employees,
-          and other participants, sponsors, advertisers, and, if applicable owners and leasors or premises used to conduct
-          the event (RELEASEES), from any and all claims, actions, demands, losses, and/or liability arising out of or
-          related to any <b>INJURY, DISABILITY OR DEATH</b> I may suffer, or loss or damage to person or property,
-          <b>WHETHER ARISING FROM THE NEGLIGENCE OF THE RELEASEES OR OTHERWISE</b>, that I may have presently or in the
-          future to the fullest extent permitted by law. </p>
-        <p class="para"><b>7.) I HAVE CAREFULLY READ THIS RELEASE OF LIABILITY AND ASSUMPTION OF RISK AGREEMENT, I FULLY
-            UNDERSTAND ITS TERMS, I UNDERSTAND THAT I HAVE GIVEN UP SUBSTANTIAL RIGHTS BY SIGNING IT, AND THAT I AM
-            RELEASING, DISCHARGING, AND WAIVING ANY CLAIMS OR ACTIONS THAT I MAY HAVE PRESENTLY OR IN THE FUTURE </b>for
-          the negligent acts or other conduct by the owners, agents, officers, or employees, or associates of the United
-          States of America, United States Forest Service, and Carolina Outfitters, Inc. <b>I AGREE TO TRAVEL THROUGHOUT
-            THE TENURE OF THE ACTIVITYAT MY OWN RISK. IT IS MY INTENTION TO EXEMPT, RELIEVE, HOLD HARMLESS, AND INDEMNIFY
-          </b>The United States Government, United States Forest Service, and Carolina Outfitters, Inc. their owners,
-          agents, officers, employees, and associates <b>(RELEASEES) FROM LIABILITY FOR PERSONAL INJURY, PROPERTY DAMAGE
-            OR WRONGFUL DEATH CAUSED BY NEGLIGENCE OR ANY OTHER CAUSE, AND I SIGN IT FREELY AND VOLUNTARILY WITHOUT ANY
-            INDUCEMENT. </b></p>
-  
-        <!-- <p>Sign Participant Name:</p> -->
-        <p>
-          <span>Sign Participant Name:</span>
-          <span class="username"><%= user.firstname + ' ' + user.lastname %></span>
-        </p>
-        <div id="sig"></div>
-        <p class="mt-3">
-          <span>Print Participant Name: </span>
-          <span class="username mt-3"><%= user.firstname + ' ' + user.lastname %></span>
-          <span>Age</span>
-          <span class="username empty"><%= user.age %></span>
-          <span>Date</span>
-          <span class="username date"></span>
-        </p>
-        <p class="para">For parents/guardians of participant of minor age (under age 18 at time of registration): This is
-          to certify that I, as parent/guardian with legal responsibility for this participant, do consent and agree to
-          his/her release as provided above of all the Releasees, and, for myself, my heirs, personal agents, assigns, and
-          next of kin, I release and agree to indemnify and hold harmless the Releasees from any and all liability
-          incidents to my minor child’s involvement or participation in these activities or programs as provided above,
-          <b>EVEN IF ARISING FROM THE NEGLIGENCE OF THE RELEASEES</b>, to the fullest extent permitted by law.</p>
-        <p>
-          <span>Sign Parent/Guardian Name:</span>
-          <span class="username"><%= user.firstname + ' ' + user.lastname %></span>
-        </p>
-        <div id="sig1"></div>
-        <p class="mt-3">
-          <span>Print Parent/Guardian Name:</span>
-          <span class="username"><%= user.firstname + ' ' + user.lastname %></span>
-        </p>
-        <p>
-          <span>Date</span>
-          <span class="username date"></span>
-          <span>Emergency Phone</span>
-          <span class="username empty"></span>
-        </p>
-        <hr class="my-4">
+  <section id="choosewaiversection">
+    <form action="/submitwaiver" method="POST">
+      <div class="container">
         <div class="row">
+          <div class="col text-center mb-4">
+            <h2 class="h2-responsive underlined-heading h2 mt-3">Waiver 1</h2>
+          </div>
+        </div>
+        <div class="waiver-container">
+          <%- waivercontent1 %>
+          <p>
+            <span>Sign Participant Name:</span>
+            <span class="username"><%= user.firstname + ' ' + user.lastname %></span>
+          </p>
+          <div id="sig"></div>
+          <p class="mt-3">
+            <span>Print Participant Name: </span>
+            <span class="username mt-3"><%= user.firstname + ' ' + user.lastname %></span>
+            <span>Age</span>
+            <input type="number" class="waiver-input" name="age" id="age">
+            <span>Date</span>
+            <span class="username date"></span>
+          </p>
+          <%- waivercontent2 %>
+          <p>
+            <span>Sign Parent/Guardian Name:</span>
+            <input type="text" class="waiver-input" name="guardianname" id="guardianname1">
+          </p>
+          <div id="sig1"></div>
+          <p class="mt-3">
+            <span>Print Parent/Guardian Name:</span>
+            <input type="text" class="waiver-input" id="guardianname2" readonly>
+          </p>
+          <p>
+            <span>Date</span>
+            <span class="username date"></span>
+            <span>Emergency Phone</span>
+            <input type="text" class="waiver-input" name="phonenumber" id="phonenumber">
+          </p>
+        </div>
+        <hr class="my-4">
+        <div class="row mb-4">
           <div class="col text-center">
-            <button class="btn btn-primary mr-2 btn-rounded">Save</button>
-            <button class="btn btn-secondary btn-rounded">Cancel</button>
+            <input type="text" name="userid" id="userid" value="<%= user._id %>" class="d-none">
+            <input type="text" name="waiverid" id="userid" value="<%= waiver._id %>" class="d-none">
+            <input type="text" name="signature1" id="signature1" class="d-none">
+            <input type="text" name="signature2" id="signature2" class="d-none">
+            <input type="text" name="date" id="date" class="d-none">
+            <input type="checkbox" name="signparticipant" id="signparticipant" class="d-none">
+            <input type="checkbox" name="signguardian" id="signguardian" class="d-none">
+            <button class="btn btn-primary mr-2 btn-rounded btn-save">Save</button>
+            <button class="btn btn-secondary btn-rounded btn-cancel">Cancel</button>
           </div>
         </div>
       </div>
-    </div>
+    </form>
   </section>
 
   <% include partials/footer %>
   <% include partials/commonscripts %>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
   <script src="/javascripts/vendors/jquery.signature.js"></script>
   <script src="/javascripts/vendors/moment.min.js"></script>
   <script>
-		$(function () {
-			var sig = $('#sig').signature();
-			var sig1 = $('#sig1').signature();
+    $(function () {
+      var sig = $('#sig').signature();
+      var sig1 = $('#sig1').signature();
     });
-    
+
     $(document).ready(function () {
       var date = moment().format('MM/DD/YYYY');
       $('.username.date').text(date);
+
+      $('.btn-save').click(function (e) {
+        var canvas1 = document.querySelector("div#sig canvas");
+        var dataURL1 = canvas1.toDataURL("image/png");
+        var canvas2 = document.querySelector("div#sig1 canvas");
+        var dataURL2 = canvas2.toDataURL("image/png");
+        $('input#signature1').val(dataURL1)
+        $('input#signature2').val(dataURL2)
+        var datetosubmit = moment().format('MM-DD-YYYY');
+        $('input#date').val(datetosubmit);
+        return true;
+      });
+
+      $('input#guardianname1').focusout(function (e) {
+        $('input#guardianname2').val($(this).val())
+      })
+
+      $('div#sig canvas').click(function (e) { 
+        $('input#signparticipant').prop('checked', 'true');
+      });
+
+      $('div#sig1 canvas').click(function (e) { 
+        $('input#signguardian').prop('checked', 'true');
+      });
     });
-	</script>
+  </script>
 </body>
 
 </html>

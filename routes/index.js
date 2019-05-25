@@ -13,4 +13,7 @@ router.get('/choosewaiver', auth.ensureAuthenticated, indexController.choosewaiv
 /* GET Waiver Page. */
 router.get('/waiver/:waiverid', auth.ensureAuthenticated, indexController.waiver_get);
 
+/* POST Submit Waiver. */
+router.post('/submitwaiver', auth.ensureAuthenticated, indexController.submitwaiver_post);
+
 module.exports = router;
