@@ -55,7 +55,7 @@ const generateHTML = (data) => new Promise(async (resolve, reject) => {
 const generatePDF = (html, pdfPath) => new Promise(async (resolve, reject) => {
   try {
     browser = await puppeteer.launch({
-      // args: ['--no-sandbox', '--disable-setuid-sandbox']
+      args: ['--no-sandbox'],
       headless: true // printo to pdf only works in headless mode currently
     });
     page = await browser.newPage();
