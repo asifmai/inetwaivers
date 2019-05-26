@@ -12,7 +12,7 @@
     <div class="container">
       <div class="row">
         <div class="col text-center mb-4">
-          <h3 class="h3-responsive mb-4">Welcome Steve Doston</h3>
+          <h3 class="h3-responsive mb-4">Welcome <%= user.firstname %> <%= user.lastname %></h3>
           <h2 class="h2-responsive underlined-heading h2">Choose a Waiver to Sign</h2>
         </div>
       </div>
@@ -26,16 +26,46 @@
                 <h4 class="mb-0 font-weight-500"><%= waivers[i].name %></h4>
               </div>
               <div class="card-body text-center px-4 mb-3">
-                  <p class="card-text pb-2"><%= waivers[i].description %></p>
+                <p class="card-text pb-2"><%= waivers[i].description %></p>
               </div>
             </div>
           </a>
         </div>
         <% } %>
       </div>
+
+      <% if (signedwaivers.length > 0) { %>
+      <div class="row">
+        <div class="col text-center mb-4">
+          <h2 class="h2-responsive underlined-heading h2">Previously Signed Waivers</h2>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <table class="table">
+            <thead class="bg-primary text-white">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Waiver</th>
+                <th scope="col">Sign Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% for (var i = 0; i < signedwaivers.length; i++) { %>
+              <tr>
+                <th scope="row"><%= i + 1 %></th>
+                <td><%= signedwaivers[i].waiverid.name %></td>
+                <td><%= signedwaivers[i].signdate %></td>
+              </tr>
+              <% } %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <% } %>
     </div>
   </section>
-
   <% include partials/footer %>
   <% include partials/commonscripts %>
 </body>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <% include partials/commonhead %>
+  <link rel="stylesheet" href="/stylesheets/choosewaiver.css">
+</head>
+
+<body>
+  <% include partials/header %>
+  <section id="choosewaiversection">
+    <div class="container">
+      <div class="row">
+        <div class="col text-center mb-4">
+          <h3 class="h3-responsive mb-4 underlined-heading">Thank You <%= user.firstname %> <%= user.lastname %></h3>
+          <h2 class="h2-responsive h2 mb-4">Your Signed Waiver has been submitted!</h2>
+          <div class="my-2 my-lg-0 m-auto">
+              <a href="/users/logout" class="btn btn-outline-primary btn-rounded"><i
+                  class="fas fa-user-alt-slash"></i> Log Out</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <% include partials/footer %>
+  <% include partials/commonscripts %>
+</body>
+
+</html>

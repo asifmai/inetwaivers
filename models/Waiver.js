@@ -24,11 +24,11 @@ const WaiverSchema = new mongoose.Schema({
 });
 
 WaiverSchema.virtual('url1').get(function () {
-  return path.resolve(__dirname, `../public/content/waivers/${this.filename1}`);
+  return path.resolve(__dirname, `../content/waivers/${this.filename1}`);
 });
 
 WaiverSchema.virtual('url2').get(function () {
-  return path.resolve(__dirname, `../public/content/waivers/${this.filename2}`);
+  return path.resolve(__dirname, `../content/waivers/${this.filename2}`);
 });
 
 module.exports = mongoose.model('Waiver', WaiverSchema);
