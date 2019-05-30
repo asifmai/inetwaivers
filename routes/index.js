@@ -16,4 +16,7 @@ router.get('/waiver/:waiverid', auth.ensureAuthenticated, indexController.waiver
 /* POST Submit Waiver. */
 router.post('/submitwaiver', auth.ensureAuthenticated, indexController.submitwaiver_post);
 
+/* GET Download Waiver */
+router.get('/downloadwaiver/:waiverid', auth.ensureAuthenticated, indexController.downloadwaiver_get);
+
 module.exports = router;

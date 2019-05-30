@@ -53,5 +53,14 @@ module.exports.submitwaiver_post = async (req, res, next) => {
   })
   const createdSignedWaiver = await newSignedWaiver.save();
   await generatePDF(req.body, createdSignedWaiver._id);
-  res.render('waiversubmitted');
+  res.render('waiversubmitted', {waiver: createdSignedWaiver});
+}
+
+// Download Waiver
+module.exports.downloadwaiver_get = (req, res, next) => {
+  const waiverid = req.params.waiverid;
+  const sourcePath = path.resolve(__dirname, `../content/signedwaivers/${waiverid}.pdf`);
+  const destPath = path.resolve(__dirname, `../public/waivers/waiver.pdf`);
+  fs.copyFileSync(sourcePath, destPath);
+  res.download(destPath);
 }

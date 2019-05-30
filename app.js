@@ -1,9 +1,9 @@
-// Variables
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+// Imports
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
 const mongoose = require('mongoose');
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
@@ -16,11 +16,12 @@ const expressSanitizer = require('express-sanitizer');
 const User = require('./models/User');
 
 // Initialize App
-var app = express();
+const app = express();
 
 // Routers Config
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users');
+const adminRouter = require('./routes/admin');
 
 // DB Config
 const db = require('./config/keys.js').mongoURI;
@@ -50,7 +51,7 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 
-// Global variables
+// Global Variables
 app.use((req, res, next) => {
   res.locals.success_msg = req.flash('success_msg');
   res.locals.error_msg = req.flash('error_msg');
@@ -62,6 +63,7 @@ app.use((req, res, next) => {
 // Routers Config
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/admin', adminRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

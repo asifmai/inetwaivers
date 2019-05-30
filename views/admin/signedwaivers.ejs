@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include partials/commonhead %>
+</head>
+
+<body>
+    <div class="page-wrapper">
+        <!-- HEADER MOBILE-->
+        <% include partials/headermobile %>
+        <!-- END HEADER MOBILE-->
+
+        <!-- MENU SIDEBAR-->
+        <% include partials/sidebar %>
+        <!-- END MENU SIDEBAR-->
+
+        <!-- PAGE CONTAINER-->
+        <div class="page-container">
+            <!-- HEADER DESKTOP-->
+            <% include partials/headerdesktop %>
+            <!-- HEADER DESKTOP-->
+
+            <!-- MAIN CONTENT-->
+            <div class="main-content">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        <div class="row mb-4">
+                            <div class="col-md-12">
+                                <div class="overview-wrap">
+                                    <h2 class="title-1">Signed Waivers of <span class="text-danger">"<%= guest.firstname %>  <%= guest.lastname %>"</span></h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                          <div class="col">
+                              <div class="table-responsive table--no-card m-b-30">
+                                  <table class="table table-borderless table-striped table-earning">
+                                    <thead>
+                                      <tr>
+                                          <th scope="col">#</th>
+                                          <th scope="col">Waiver</th>
+                                          <th scope="col">Sign Date</th>
+                                          <th scope="col">Download</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <% if (waivers.length > 0) { %>
+                                      <% for (var i = 0; i < waivers.length; i++) { %>
+                                          <tr>
+                                            <td><%= i + 1 %></td>
+                                            <td><%= waivers[i].waiverid.name %></td>
+                                            <td><%= waivers[i].signdate %></td>
+                                            <td><a href="/admin/downloadwaiver/<%= waivers[i]._id %>"><i class="fas fa-download"></i></a></td>
+                                          </tr>
+                                      <% } %>
+                                      <% } %>
+                                    </tbody>
+                                  </table>
+                                </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col text-center">
+                            <a href="/admin/guests" class="btn btn-primary">
+                              <i class="fas fa-backward"></i> &nbsp; Back
+                            </a>
+                          </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <% include partials/footer %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END MAIN CONTENT-->
+            <!-- END PAGE CONTAINER-->
+        </div>
+
+    </div>
+    <% include partials/commonscripts %>
+</body>
+
+</html>

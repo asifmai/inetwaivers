@@ -13,7 +13,7 @@ exports.ensureAuthenticatedAdmin = (req, res, next) => {
     req.flash('error_msg', 'Login as Administrator to continue');
     res.redirect('/admin/login');
   }
-  req.flash('error_msg', 'Please log in to view that resource');
+  req.flash('error_msg', 'Login as Administrator to continue');
   res.redirect('/admin/login');
 };
 

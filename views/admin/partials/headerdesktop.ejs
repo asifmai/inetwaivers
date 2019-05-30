@@ -1,0 +1,42 @@
+<header class="header-desktop">
+    <div class="section__content section__content--p30">
+        <div class="container-fluid">
+            <div class="header-wrap">
+                
+                <div class="header-button" style="margin-left: auto;">
+                  
+                    <div class="account-wrap">
+                        <div class="account-item clearfix js-item-menu">
+                            <div class="image" style="    display: flex;
+                            justify-content: center;
+                            align-items: center;">
+                              <i class="fas fa-user    " style="font-size: 1.5em;"></i>
+                            </div>
+                            <div class="content">
+                                <a class="js-acc-btn" href="#">
+                                  <%= user.fullName %>
+                                </a>
+                            </div>
+                            <div class="account-dropdown js-dropdown">
+                                <div class="account-dropdown__body">
+                                    <div class="account-dropdown__item">
+                                        <a href="#">
+                                            <i class="zmdi zmdi-settings"></i>Account Settings</a>
+                                    </div>
+                                    <div class="account-dropdown__item">
+                                        <a href="#">
+                                            <i class="zmdi zmdi-account"></i>Change Password</a>
+                                    </div>
+                                </div>
+                                <div class="account-dropdown__footer">
+                                    <a href="/admin/logout">
+                                        <i class="zmdi zmdi-power"></i>Logout</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

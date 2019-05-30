@@ -49,6 +49,7 @@
                 <th scope="col">#</th>
                 <th scope="col">Waiver</th>
                 <th scope="col">Sign Date</th>
+                <th scope="col">Download</th>
               </tr>
             </thead>
             <tbody>
@@ -57,6 +58,11 @@
                 <th scope="row"><%= i + 1 %></th>
                 <td><%= signedwaivers[i].waiverid.name %></td>
                 <td><%= signedwaivers[i].signdate %></td>
+                <td>
+                  <a href="/downloadwaiver/<%= signedwaivers[i]._id %>">
+                    <i class="fas fa-download text-primary"></i>
+                  </a>
+                </td>
               </tr>
               <% } %>
             </tbody>
