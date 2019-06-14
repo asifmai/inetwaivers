@@ -50,6 +50,7 @@ module.exports.submitwaiver_post = async (req, res, next) => {
     participantsignature: req.body.signature1,
     guardiansignature: req.body.signature2,
     age: Number(req.body.age),
+    signed: true,
   })
   const createdSignedWaiver = await newSignedWaiver.save();
   await generatePDF(req.body, createdSignedWaiver._id);

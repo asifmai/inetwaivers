@@ -21,6 +21,7 @@ mongoose.connect(db, {
         console.log(err);
       } else {
         console.log('Admin Created with password = default123 \n', user);
+        mongoose.disconnect();
       }
     });
   })

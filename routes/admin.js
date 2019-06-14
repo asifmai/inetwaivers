@@ -24,4 +24,13 @@ router.get('/signedwaivers/:guestid', auth.ensureAuthenticatedAdmin, adminContro
 // GET - Private : Download Waiver
 router.get('/downloadwaiver/:waiverid', auth.ensureAuthenticatedAdmin, adminController.downloadwaiver_get);
 
+// GET - Private : Delete Guest
+router.get('/deleteguest/:guestid', auth.ensureAuthenticatedAdmin, adminController.deleteguest_get);
+
+// GET - Private : Show Signed Waivers List
+router.get('/signedwaiverslist', auth.ensureAuthenticatedAdmin, adminController.signedwaiverslist_get);
+
+// GET - Private : Delete waiver
+router.get('/deletewaiver/:waiverid', auth.ensureAuthenticatedAdmin, adminController.deletewaiver_get);
+
 module.exports = router;

@@ -4,17 +4,27 @@ const SignedWaiverSchema = new mongoose.Schema({
   waiverid: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Waiver',
+    required: true,
   },
   userid: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
+    required: true,
   },
   createdat: {
     type: Date,
+    required: true,
     default: Date.now,
+  },
+  signed: {
+    type: Boolean,
+    required: true,
+    default: false,
   },
   signdate: {
     type: String,
+    required: true,
+    default: '',
   },
   emergencyphone: {
     type: String,

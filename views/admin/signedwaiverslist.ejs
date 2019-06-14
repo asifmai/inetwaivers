@@ -28,15 +28,15 @@
             <div class="row mb-4">
               <div class="col-md-12">
                 <div class="overview-wrap">
-                  <h2 class="title-1">Guests</h2>
+                  <h2 class="title-1">Signed Waivers</h2>
                 </div>
               </div>
             </div>
             <div class="row mb-4">
               <div class="col-md-6">
-                <form action="/admin/guests" method="get">
+                <form action="/admin/signedwaiverslist" method="get">
                   <div class="input-group">
-                      <input type="text" id="searchtext" name="searchtext" placeholder="Search for Guests" class="form-control" value="<%= query.searchtext === '' ? '' : query.searchtext %>">
+                      <input type="text" id="searchtext" name="searchtext" placeholder="Search for Waivers" class="form-control" value="<%= query.searchtext === '' ? '' : query.searchtext %>">
                       <div class="input-group-btn">
                           <button class="btn btn-primary btn-search">
                             <i class="fas fa-search"></i>
@@ -53,30 +53,30 @@
                   <table class="table table-borderless table-striped table-earning">
                     <thead>
                       <tr>
-                        <th>Name</th>
-                        <th>Address</th>
-                        <th>City</th>
-                        <th>State</th>
-                        <th>Zip Code</th>
-                        <th>Email</th>
-                        <th>Phone</th>
-                        <th>Waivers</th>
+                        <th>Waiver</th>
+                        <th>User Name</th>
+                        <th>Age</th>
+                        <th>Signed</th>
+                        <th>Sign Date</th>
+                        <th>Emergency Phone</th>
+                        <th>Guardian Name</th>
+                        <th>Download</th>
                         <th>Delete</th>
                       </tr>
                     </thead>
                     <tbody>
-                      <% if (guests.length > 0) { %>
-                      <% for (var i = 0; i < guests.length; i++) { %>
+                      <% if (waivers.length > 0) { %>
+                      <% for (var i = 0; i < waivers.length; i++) { %>
                           <tr>
-                            <td><%= guests[i].firstname %> <%= guests[i].lastname %></td>
-                            <td><%= guests[i].address %></td>
-                            <td><%= guests[i].city %></td>
-                            <td><%= guests[i].state %></td>
-                            <td><%= guests[i].zipcode %></td>
-                            <td><%= guests[i].email %></td>
-                            <td><%= guests[i].phone %></td>
-                            <td><a href="/admin/signedwaivers/<%= guests[i]._id %>">View</a></td>
-                            <td><a href="/admin/deleteguest/<%= guests[i]._id %>" class="text-danger btn-delete-guest"><i class="fas fa-trash"></i></a></td>
+                            <td><%= waivers[i].waiverid.name %></td>
+                            <td><%= waivers[i].userid.firstname %> <%= waivers[i].userid.lastname %></td>
+                            <td><%= waivers[i].age %></td>
+                            <td><%= waivers[i].signed %></td>
+                            <td><%= waivers[i].signdate %></td>
+                            <td><%= waivers[i].emergencyphone %></td>
+                            <td><%= waivers[i].guardianname %></td>
+                            <td><a href="/admin/downloadwaiver/<%= waivers[i]._id %>"><i class="fas fa-download"></i></a></td>
+                            <td><a href="/admin/deletewaiver/<%= waivers[i]._id %>" class="text-danger btn-delete-waiver"><i class="fas fa-trash"></i></a></td>
                           </tr>
                       <% } %>
                       <% } %>
@@ -101,12 +101,12 @@
   <% include partials/commonscripts %>
   <script>
     $(document).ready(function () {
-      $('.btn-delete-guest').on('click', function (e) {
+      $('.btn-delete-waiver').on('click', function (e) {
         e.preventDefault();
         var deleteURL = $(this).attr("href");
         swal.fire({
           title: "Are you sure?",
-          text: "This will delete the guest information and all his signed waivers, you will not be able to recover them!",
+          text: "This will delete the waiver, you will not be able to recover it!",
           type: "warning",
           showCancelButton: true,
           confirmButtonText: "Yes, delete it!",

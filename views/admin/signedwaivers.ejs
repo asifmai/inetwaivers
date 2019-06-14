@@ -28,7 +28,7 @@
                         <div class="row mb-4">
                             <div class="col-md-12">
                                 <div class="overview-wrap">
-                                    <h2 class="title-1">Signed Waivers of <span class="text-danger">"<%= guest.firstname %>  <%= guest.lastname %>"</span></h2>
+                                    <h3 class="title-2">Signed Waivers of <span class="text-danger">"<%= guest.firstname %>  <%= guest.lastname %>"</span></h3>
                                 </div>
                             </div>
                         </div>
@@ -41,6 +41,7 @@
                                           <th scope="col">#</th>
                                           <th scope="col">Waiver</th>
                                           <th scope="col">Sign Date</th>
+                                          <th scope="col">Signed</th>
                                           <th scope="col">Download</th>
                                       </tr>
                                     </thead>
@@ -51,6 +52,7 @@
                                             <td><%= i + 1 %></td>
                                             <td><%= waivers[i].waiverid.name %></td>
                                             <td><%= waivers[i].signdate %></td>
+                                            <td><%= waivers[i].signed %></td>
                                             <td><a href="/admin/downloadwaiver/<%= waivers[i]._id %>"><i class="fas fa-download"></i></a></td>
                                           </tr>
                                       <% } %>
