@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <% include partials/commonhead %>
+</head>
+
+<body>
+  <div class="page-wrapper">
+    <!-- HEADER MOBILE-->
+    <% include partials/headermobile %>
+    <!-- END HEADER MOBILE-->
+
+    <!-- MENU SIDEBAR-->
+    <% include partials/sidebar %>
+    <!-- END MENU SIDEBAR-->
+
+    <!-- PAGE CONTAINER-->
+    <div class="page-container">
+      <!-- HEADER DESKTOP-->
+      <% include partials/headerdesktop %>
+      <!-- HEADER DESKTOP-->
+
+      <!-- MAIN CONTENT-->
+      <div class="main-content">
+        <div class="section__content section__content--p30">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="overview-wrap">
+                  <h2 class="title-1">Account Settings</h2>
+                </div>
+              </div>
+            </div>
+            <div class="row m-t-25">
+              <div class="col-12 col-lg-6">
+                <form action="/admin/accountsettings" method="post" class="form-horizontal">
+                  <div class="card">
+                    <div class="card-header">
+                      Account Settings
+                    </div>
+                    <div class="card-body card-block">
+                      <div class="row form-group">
+                        <div class="col col-md-3">
+                          <label for="firstname" class=" form-control-label">First Name</label>
+                        </div>
+                        <input type="text" name="userid" value="<%= user._id %>" class="d-none">
+                        <div class="col-12 col-md-9">
+                          <input type="text" name="firstname" class="form-control" value="<%= user.firstname %>"
+                            required>
+                        </div>
+                      </div>
+                      <div class="row form-group">
+                        <div class="col col-md-3">
+                          <label for="lastname" class=" form-control-label">Last Name</label>
+                        </div>
+                        <div class="col-12 col-md-9">
+                          <input type="text" id="lastname" name="lastname" class="form-control"
+                            value="<%= user.lastname %>" required>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-footer">
+                      <button type="submit" class="btn btn-primary btn-sm">
+                        <i class="fa fa-dot-circle-o"></i> Submit
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <% include partials/footer %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- END MAIN CONTENT-->
+      <!-- END PAGE CONTAINER-->
+    </div>
+
+  </div>
+  <% include partials/commonscripts %>
+</body>
+
+</html>

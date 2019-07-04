@@ -3127,7 +3127,7 @@ section {
     -moz-border-radius: 10px;
     border-radius: 10px;
     padding: 30px;
-    padding-bottom: 0;
+    /* padding-bottom: 0; */
     -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
     box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
@@ -3175,6 +3175,10 @@ section {
     font-size: 60px;
     color: #fff;
 }
+
+.overview-box {
+    display: flex;
+  }
 
 @media (min-width: 992px) and (max-width: 1199px) {
     .overview-box .icon {

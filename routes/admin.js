@@ -33,4 +33,16 @@ router.get('/signedwaiverslist', auth.ensureAuthenticatedAdmin, adminController.
 // GET - Private : Delete waiver
 router.get('/deletewaiver/:waiverid', auth.ensureAuthenticatedAdmin, adminController.deletewaiver_get);
 
+// GET - Private : Show Account Setting Page
+router.get('/accountsettings', auth.ensureAuthenticatedAdmin, adminController.accountsettings_get)
+
+// POST - Private : Change account settings
+router.post('/accountsettings', auth.ensureAuthenticatedAdmin, adminController.accountsettings_post)
+
+// GET - Private : Show Change Password Page
+router.get('/changepassword', auth.ensureAuthenticatedAdmin, adminController.changepassword_get)
+
+// POST - Private : Change Password
+router.post('/changepassword', auth.ensureAuthenticatedAdmin, adminController.changepassword_post)
+
 module.exports = router;

@@ -14,17 +14,17 @@
                             </div>
                             <div class="content">
                                 <a class="js-acc-btn" href="#">
-                                  <%= user.fullName %>
+                                  <%= user.firstname + ' ' + user.lastname %>
                                 </a>
                             </div>
                             <div class="account-dropdown js-dropdown">
                                 <div class="account-dropdown__body">
                                     <div class="account-dropdown__item">
-                                        <a href="#">
+                                        <a href="/admin/accountsettings">
                                             <i class="zmdi zmdi-settings"></i>Account Settings</a>
                                     </div>
                                     <div class="account-dropdown__item">
-                                        <a href="#">
+                                        <a href="/admin/changepassword">
                                             <i class="zmdi zmdi-account"></i>Change Password</a>
                                     </div>
                                 </div>
